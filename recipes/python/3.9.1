@@ -1,0 +1,26 @@
+#!/bin/bash
+
+module load local
+module load gcc/10.2.0
+
+scratch=${HOME}/.scratch
+
+version=3.9.1
+prefix="/opt/apps/python/${version}"
+
+url="https://www.python.org/ftp/python/${version}/Python-${version}.tgz"
+
+cd "$scratch" || exit
+wget -nc $url
+
+tar xzf Python-${version}.tgz
+
+cd Python-${version} || exit
+mkdir objdir
+cd objdir || exit
+../configure --prefix=$prefix \
+  --enable-optimizations \
+  --with-lto
+
+make -j 10
+sudo make install
