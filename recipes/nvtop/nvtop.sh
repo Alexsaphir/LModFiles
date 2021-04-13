@@ -4,7 +4,6 @@
 scratch=${HOME}/.scratch
 
 version=1.1.0
-version=1.1.0
 prefix="/opt/apps/nvtop/${version}"
 
 module load local cmake git

@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo guestmount -a ext4.vhdx -m /dev/sda -r /mnt/wsl -o allow_other
+sudo guestmount -a ext4.vhdx -m /dev/sda -r /mnt/wsl -o allow_other
+sudo guestmount -a ext4.vhdx -m /dev/sda -r /mnt/wsl -o allow_other
